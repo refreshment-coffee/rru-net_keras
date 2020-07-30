@@ -33,7 +33,6 @@ def GetModel(input_shape):
     t2 = Conv2D(3, kernel_size=(1, 1), strides=(1,1), padding='same')(yf_1)#G(yf)
    # yb_1=(Activation("sigmoid")(t2)+1)*c1_1#x=c1_1    报错，卷积层中无法进行加减乘除运算,要用对应的层
     #yb_1=(Activation("sigmoid)(t2))*c1_1+c1_1 化解成这样
-####
 
     t1=Activation("sigmoid")(t2)
     t1=Multiply()([t1,c1_1])
